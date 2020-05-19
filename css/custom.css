@@ -88,13 +88,6 @@ h4 {
   font-size: 1.2rem;
 }
 
-/* Footer */
-
-.footer {
-  background: rgb(104,182,132);
-  background: linear-gradient(90deg, rgba(104,182,132,0.788953081232493) 0%, rgba(34,134,211,0.7721463585434174) 51%, rgba(145,34,211,0.738532913165266) 100%);
-}
-
 /* Links */
 
 a {
@@ -104,6 +97,93 @@ a {
 a:hover {
   color: #90DBF2;
   text-decoration: none;
+}
+
+/* About-section icons */
+
+ul.custom-bullet {
+  display: inline-block;
+  padding: 0.5em;
+  padding-left: 2em;
+  margin: 0.5em;
+  list-style: none;
+  counter-reset: liNum;
+}
+
+ul.custom-bullet > li {
+  clear: left;
+  counter-increment: liNum 1;
+}
+
+ul.custom-bullet > li:before {
+  content:"";
+  height: 25px;
+  width: 25px;
+  display: block;
+  float: left;
+  margin-right: 1.5em;
+  margin-bottom: 1em;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+  opacity: .5;
+}
+
+ul.custom-bullet > li:before{
+  content:counter(liNum);
+  text-align:center;
+}
+
+ul.about> li:nth-of-type(1):before{
+  content:"";
+  background-image:url("../img/graduation.svg");
+}
+
+ul.about> li:nth-of-type(2):before{
+  content:"";
+  background-image:url("../img/suitcase.svg");
+}
+
+ul.about> li:nth-of-type(3):before{
+  content:"";
+  background-image:url("../img/suitcase.svg");
+}
+
+ul.about> li:nth-of-type(4):before{
+  content:"";
+  background-image:url("../img/clock.svg");
+}
+
+ul.about> li:nth-of-type(5):before{
+  content:"";
+  background-image:url("../img/monitor.svg");
+}
+
+/* Images */
+
+.profile-pic {
+  display: block;
+  height: 252px;
+  width: 239px;
+  border-radius: 2%;
+  margin: 20px auto 50px auto;
+
+}
+
+/* Nav anchor offset */
+
+.anchor {
+    display: block;
+    position: relative;
+    top: -100px;
+    visibility: hidden;
+}
+
+/* Footer */
+
+.footer {
+  background: rgb(104,182,132);
+  background: linear-gradient(90deg, rgba(104,182,132,0.788953081232493) 0%, rgba(34,134,211,0.7721463585434174) 51%, rgba(145,34,211,0.738532913165266) 100%);
 }
 
 /* Social media icon links */
@@ -149,59 +229,6 @@ a.instagram {
   background-image: url('../img/instagram.svg');
 }
 
-/* Section borders */
-
-.b-border {
-  border-bottom: 1px solid #dfe2e6;
-}
-
-.t-border {
-  border-top: 1px solid #dfe2e6;
-}
-
-/* Images */
-
-.profile-pic {
-  display: block;
-  height: 224px;
-  width: 212px;
-  border-radius: 5%;
-  border: 2px solid #41b4ec;
-  margin: 20px auto 50px auto;
-}
-
-/* Skill blocks */
-
-.skills li {
-  font-family: 'Futura', Helvetica, Arial, sans-serif;
-  font-size: 1.2rem;
-  display: inline-flex;
-  border-radius: 6px;
-  background-color: #41b4ec;
-  color: white;
-  padding: 10px 20px;
-  margin: 2px;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.skills li:nth-child(2n+0) {
-  background: #77ce94;
-}
-
-.skills li:nth-child(3n+0) {
-  background: #C878E9
-}
-
-/* Anchor offset */
-
-.anchor {
-    display: block;
-    position: relative;
-    top: -100px;
-    visibility: hidden;
-}
-
 /* Media queries */
 
 @media (min-width: 1024px) {
@@ -221,10 +248,5 @@ a.instagram {
 
   .body-text {
     font-size: 1.2rem;
-  }
-
-  .intro-padding {
-      padding-left: 8rem;
-      padding-right: 8rem;
   }
 }
